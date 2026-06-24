@@ -1,0 +1,31 @@
+{
+  "name": "lizhendong-portfolio",
+  "version": "1.0.0",
+  "description": "Personal portfolio for a level designer and 3D environment designer.",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.5.3",
+      "onFail": "download"
+    }
+  },
+  "type": "module",
+  "dependencies": {
+    "gsap": "^3.15.0",
+    "lucide-react": "^1.21.0",
+    "ogl": "^1.0.11",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  },
+  "devDependencies": {
+    "vite": "5.4.21"
+  }
+}
