@@ -1,0 +1,14 @@
+node_modules
+dist
+.DS_Store
+resume.pdf
+.pnpm-store
+rendered_*
+render_*
+*.log
+*.docx
+*.pdf
+*.txt
+*.py
+*.json
+*.md
