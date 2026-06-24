@@ -25,8 +25,8 @@ const contacts = {
 };
 
 const heroVideos = [
-  '/assets/hero-c4d-bg.mp4',
-  '/assets/hero-bg.mp4',
+  './assets/hero-c4d-bg.mp4',
+  './assets/hero-bg.mp4',
 ];
 
 const metrics = [
@@ -40,32 +40,32 @@ const projects = [
   {
     title: '开放世界场景地编研究',
     tag: 'World Layout',
-    image: '/assets/project-world-layout.png',
-    detailUrl: '/showcase/world-layout.html',
+    image: './assets/project-world-layout.png',
+    detailUrl: './showcase/world-layout.html',
     description:
       '围绕探索路线、视线引导和场景节奏建立空间层次，让远景目标、近景遮挡与奖励点形成连续牵引。',
   },
   {
     title: '关卡DEMO制作',
     tag: 'Dungeon Flow',
-    image: '/assets/project-dungeon-flow.png',
-    detailUrl: '/showcase/level-demo.html',
+    image: './assets/project-dungeon-flow.png',
+    detailUrl: './showcase/level-demo.html',
     description:
       '以战斗入口、遭遇区、补给点和 Boss 场为核心，强调玩家压力曲线与路径可读性。',
   },
   {
     title: '硬表面道具建模练习',
     tag: '3D Modeling',
-    image: '/assets/project-hard-surface.png',
-    detailUrl: '/showcase/modeling.html',
+    image: './assets/project-hard-surface.png',
+    detailUrl: './showcase/modeling.html',
     description:
       '面向场景资产生产的建模表达，重视轮廓识别、材质分区和可落地的制作流程。',
   },
   {
     title: '大型活动空间动线规划',
     tag: 'Live Space',
-    image: '/assets/project-event-space.png',
-    detailUrl: '/showcase/live-space.html',
+    image: './assets/project-event-space.png',
+    detailUrl: './showcase/live-space.html',
     description:
       '来自音乐节和年会执行经验，关注高客流场景下的布置、服务路径与现场反馈。',
   },
@@ -316,7 +316,7 @@ function App() {
         <video
           key={heroVideos[heroVideoIndex]}
           className="hero-video"
-          poster="/assets/hero-poster.png"
+          poster="./assets/hero-poster.png"
           src={heroVideos[heroVideoIndex]}
           autoPlay
           muted
@@ -377,7 +377,7 @@ function App() {
         <section className="experience section" id="experience">
           <div className="container split-layout">
             <div className="portrait-panel">
-              <img src="/assets/profile-portrait.png" alt="李振东人物视觉图" />
+              <img src="./assets/profile-portrait.png" alt="李振东人物视觉图" />
             </div>
             <div className="profile-copy">
               <p className="section-kicker">PROFILE</p>
