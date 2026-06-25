@@ -123,7 +123,7 @@ function App() {
   useEffect(() => {
     const timer = window.setInterval(() => {
       setHeroVideoIndex((index) => (index + 1) % heroVideos.length);
-    }, 9000);
+    }, 10000);
 
     return () => window.clearInterval(timer);
   }, []);
