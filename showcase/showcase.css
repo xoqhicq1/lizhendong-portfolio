@@ -440,8 +440,8 @@ h1 {
 }
 
 .fb-stage {
-  right: 8%;
-  top: 14%;
+  left: 57%;
+  top: 8%;
   width: 22%;
   height: 72px;
   color: #fff;
@@ -513,24 +513,24 @@ h1 {
 }
 
 .fb-flow.f1 {
-  left: 17%;
-  top: 21%;
-  width: 28%;
-  transform: rotate(23deg);
+  left: 15%;
+  top: 20%;
+  width: 27%;
+  transform: rotate(20deg);
 }
 
 .fb-flow.f2 {
-  left: 17%;
-  top: 38%;
-  width: 25%;
-  transform: rotate(7deg);
+  left: 15%;
+  top: 36%;
+  width: 27%;
+  transform: rotate(5deg);
 }
 
 .fb-flow.f3 {
-  left: 17%;
-  bottom: 18%;
+  left: 15%;
+  bottom: 16%;
   width: 38%;
-  transform: rotate(-34deg);
+  transform: rotate(-36deg);
 }
 
 .phase-map-wrap {
