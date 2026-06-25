@@ -24,10 +24,7 @@ const contacts = {
   location: 'Zhanjiang / Guangzhou',
 };
 
-const heroVideos = [
-  './assets/hero-c4d-bg.mp4',
-  './assets/hero-bg.mp4',
-];
+const heroVideos = ['./assets/hero-c4d-bg.mp4', './assets/hero-bg.mp4'];
 
 const metrics = [
   { value: '10+', label: '年游戏体验沉淀' },
@@ -51,7 +48,7 @@ const projects = [
     image: './assets/project-dungeon-flow.png',
     detailUrl: './showcase/level-demo.html',
     description:
-      '以战斗入口、遭遇区、补给点和 Boss 场为核心，强调玩家压力曲线与路径可读性。',
+      '以场景资产、空间层级和关卡动线为核心，展示可落地的 DEMO 搭建与视觉表达能力。',
   },
   {
     title: '硬表面道具建模练习',
@@ -67,7 +64,7 @@ const projects = [
     image: './assets/project-event-space.png',
     detailUrl: './showcase/live-space.html',
     description:
-      '来自音乐节和年会执行经验，关注高客流场景下的布置、服务路径与现场反馈。',
+      '来自音乐节和活动执行经验，关注高客流场景下的布置、服务路径与现场反馈。',
   },
 ];
 
@@ -75,7 +72,7 @@ const strengths = [
   {
     icon: Route,
     title: '关卡动线判断',
-    text: '长期竞技与 MMORPG 体验带来强烈的路径敏感度，能从玩家视角判断探索、战斗和反馈节奏。',
+    text: '长期竞技与 MMORPG 体验带来较强的路径敏感度，能从玩家视角判断探索、战斗和反馈节奏。',
   },
   {
     icon: Layers3,
@@ -133,8 +130,7 @@ function App() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const ease = 'power4.out';
-      const opening = gsap.timeline({ defaults: { ease } });
+      const opening = gsap.timeline({ defaults: { ease: 'power4.out' } });
 
       opening
         .set('.site-nav', { y: -34, autoAlpha: 0 })
@@ -143,7 +139,11 @@ function App() {
           scaleX: 0.92,
           filter: 'contrast(1.25) brightness(0.72)',
         })
-        .set('.hero-video', { scale: 1.2, yPercent: -3, filter: 'grayscale(0.9) contrast(1.45) brightness(0.42)' })
+        .set('.hero-video', {
+          scale: 1.2,
+          yPercent: -3,
+          filter: 'grayscale(0.9) contrast(1.45) brightness(0.42)',
+        })
         .set('.hero-masthead span', {
           yPercent: 118,
           scaleX: 0.62,
@@ -180,24 +180,8 @@ function App() {
           },
           '-=0.78',
         )
-        .to(
-          '.site-nav',
-          {
-            y: 0,
-            autoAlpha: 1,
-            duration: 0.9,
-          },
-          '-=0.75',
-        )
-        .to(
-          '.hero-content',
-          {
-            y: 0,
-            autoAlpha: 1,
-            duration: 1,
-          },
-          '-=0.42',
-        )
+        .to('.site-nav', { y: 0, autoAlpha: 1, duration: 0.9 }, '-=0.75')
+        .to('.hero-content', { y: 0, autoAlpha: 1, duration: 1 }, '-=0.42')
         .to(
           '.hero-slogan, .hero-index',
           {
@@ -221,10 +205,12 @@ function App() {
         },
       });
 
-      gsap.utils.toArray('.section').forEach((section) => {
+      gsap.utils.toArray('.section, .contact-page').forEach((section) => {
         const heading = section.querySelector('.section-heading h2, .profile-copy h2, .contact-layout h2');
         const kicker = section.querySelector('.section-kicker');
-        const cards = section.querySelectorAll('.metric, .project-card, .strength-card, .contact-row, .contact-note, .portrait-panel');
+        const cards = section.querySelectorAll(
+          '.metric, .project-card, .strength-card, .contact-row, .contact-note, .portrait-panel',
+        );
         const media = section.querySelectorAll('.project-card img, .portrait-panel img');
 
         if (heading) {
@@ -288,6 +274,8 @@ function App() {
           );
         });
       });
+
+      ScrollTrigger.refresh();
     });
 
     return () => ctx.revert();
@@ -306,9 +294,9 @@ function App() {
           <a href="#strengths">优势</a>
           <a href="#contact">联系</a>
         </nav>
-        <a className="nav-action" href={`mailto:${contacts.email}`}>
-          <Mail size={18} />
-          联系
+        <a className="nav-action" href="./assets/resume.pdf" target="_blank" rel="noreferrer">
+          <ArrowUpRight size={18} />
+          简历
         </a>
       </header>
 
@@ -366,12 +354,7 @@ function App() {
 
       <div className="post-hero-shell">
         <div className="aurora-backdrop" aria-hidden="true">
-          <Aurora
-            colorStops={['#ff2a16', '#d8ad67', '#84bcb9']}
-            blend={0.48}
-            amplitude={0.85}
-            speed={0.42}
-          />
+          <Aurora colorStops={['#ff2a16', '#d8ad67', '#84bcb9']} blend={0.48} amplitude={0.85} speed={0.42} />
         </div>
 
         <section className="experience section" id="experience">
@@ -420,9 +403,7 @@ function App() {
                 <p className="section-kicker">SELECTED PROJECTS</p>
                 <h2>精选项目</h2>
               </div>
-              <p>
-                以空间组织、战斗节奏、资产表达和现场动线为主线，展示从想法到可读画面的设计判断。
-              </p>
+              <p>以空间组织、战斗节奏、资产表达和现场动线为主线，展示从想法到可读画面的设计判断。</p>
             </div>
             <div className="project-grid">
               {projects.map((project, index) => (
@@ -482,6 +463,11 @@ function App() {
                   {contacts.phone}
                   <small>微信同号</small>
                 </span>
+                <ArrowUpRight size={22} />
+              </a>
+              <a href="./assets/resume.pdf" target="_blank" rel="noreferrer" className="contact-row">
+                <ArrowUpRight size={24} />
+                <span>查看 PDF 简历</span>
                 <ArrowUpRight size={22} />
               </a>
               <div className="contact-note">
