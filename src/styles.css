@@ -540,6 +540,12 @@ a {
   isolation: isolate;
 }
 
+.post-hero-shell > .section,
+.post-hero-shell > .contact-page {
+  position: relative;
+  z-index: 1;
+}
+
 .post-hero-shell::before {
   position: absolute;
   inset: 0;
@@ -558,9 +564,10 @@ a {
   left: 50%;
   z-index: -1;
   width: 100vw;
-  height: min(1500px, 180vh);
+  height: 100%;
+  min-height: 100%;
   transform: translateX(-50%);
-  opacity: 0.48;
+  opacity: 0.5;
   filter: blur(1px) saturate(1.15);
   pointer-events: none;
 }
@@ -570,8 +577,8 @@ a {
   inset: 0;
   content: "";
   background:
-    radial-gradient(circle at 50% 0%, transparent 0, rgba(6, 8, 10, 0.2) 46%, rgba(6, 8, 10, 0.88) 92%),
-    linear-gradient(180deg, transparent, rgba(6, 8, 10, 0.82) 78%);
+    radial-gradient(circle at 50% 0%, transparent 0, rgba(6, 8, 10, 0.18) 42%, rgba(6, 8, 10, 0.74) 92%),
+    linear-gradient(180deg, transparent, rgba(6, 8, 10, 0.36) 52%, rgba(6, 8, 10, 0.82) 100%);
 }
 
 .section {
